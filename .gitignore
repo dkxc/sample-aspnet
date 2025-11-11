@@ -1,0 +1,8 @@
+**/[Bb]in/**
+**/[Oo]bj/**
+**/[Dd]ebug/**
+
+appsettings.Development.json
+.env*
+
+**/node_modules/**
