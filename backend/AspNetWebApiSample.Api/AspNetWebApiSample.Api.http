@@ -1,0 +1,6 @@
+@AspNetWebApiSample.Api_HostAddress = http://localhost:5084
+
+GET {{AspNetWebApiSample.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
