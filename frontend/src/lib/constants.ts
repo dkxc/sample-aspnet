@@ -1,0 +1,1 @@
+export const API_PREFIX_URL = import.meta.env.VITE_API_PREFIX_URL;
