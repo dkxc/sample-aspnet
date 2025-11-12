@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Frontend: Run",
+    "command": "node",
+    "args": ["${ZED_WORKTREE_ROOT}/scripts/run-script.js", "dev"],
+    "cwd": "${ZED_WORKTREE_ROOT}/frontend",
+    "use_new_terminal": true
+  },
+  {
+    "label": "Frontend: Build",
+    "command": "node",
+    "args": ["${ZED_WORKTREE_ROOT}/scripts/run-script.js", "build"],
+    "cwd": "${ZED_WORKTREE_ROOT}/frontend",
+    "use_new_terminal": true
+  },
+  {
+    "label": "Backend: Run",
+    "command": "dotnet",
+    "args": [
+      "run",
+      "--project",
+      "backend/AspNetWebApiSample.Api/AspNetWebApiSample.Api.csproj",
+      "--launch-profile",
+      "https"
+    ],
+    "env": {
+      "ASPNETCORE_ENVIRONMENT": "Development"
+    },
+    "use_new_terminal": true
+  },
+  {
+    "label": "Backend: Build",
+    "command": "dotnet",
+    "args": [
+      "build",
+      "--project",
+      "backend/AspNetWebApiSample.Api/AspNetWebApiSample.Api.csproj",
+      "--configuration",
+      "Release"
+    ],
+    "env": {
+      "ASPNETCORE_ENVIRONMENT": "Production"
+    },
+    "use_new_terminal": true
+  }
+]
