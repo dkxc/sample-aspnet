@@ -1,4 +1,4 @@
-﻿namespace AspNetWebApiSample.Api.Models;
+namespace AspNetWebApiSample.Api.Features.TodoItems;
 
 public class TodoItemDto
 {

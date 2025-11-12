@@ -1,4 +1,4 @@
-using AspNetWebApiSample.Api.Models;
+using AspNetWebApiSample.Api.Features.TodoItems;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
