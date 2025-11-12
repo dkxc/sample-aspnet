@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using AspNetWebApiSample.Api.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
-namespace AspNetWebApiSample.Api.Models;
+namespace AspNetWebApiSample.Api.Features.TodoItems;
 
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
-    { 
+    {
     }
 
-    public DbSet<TodoItem> TodoItems => Set<TodoItem>();
-
-public DbSet<AspNetWebApiSample.Api.Models.TodoItemDto> TodoItemDto { get; set; } = default!;
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        base.OnModelCreating(modelBuilder);
+    }
 }
