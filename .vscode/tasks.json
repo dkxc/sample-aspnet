@@ -1,0 +1,87 @@
+{
+  // See https://code.visualstudio.com/docs/debugtest/tasks#vscode
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Frontend: Run",
+      "type": "shell",
+      "command": "node",
+      "args": ["${workspaceFolder}/scripts/run-script.js", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Build",
+      "type": "shell",
+      "command": "node",
+      "args": ["${workspaceFolder}/scripts/run-script.js", "build"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Run",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/backend/AspNetWebApiSample.Api/AspNetWebApiSample.Api.csproj",
+        "--launch-profile",
+        "https"
+      ],
+      "options": {
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      },
+      "group": {
+        "kind": "build"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Backend: Build",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "--project",
+        "backend/AspNetWebApiSample.Api/AspNetWebApiSample.Api.csproj",
+        "--configuration",
+        "Release"
+      ],
+      "options": {
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Production"
+        }
+      },
+      "group": {
+        "kind": "build"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}
